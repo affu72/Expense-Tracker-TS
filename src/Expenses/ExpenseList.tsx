@@ -1,7 +1,12 @@
 import ExpenseItem from "./ExpenseItem";
 import "./ExpenseList.css";
+import { FormDataType } from "../Interfaces&Types/FormData";
 
-const ExpensesList = (props) => {
+type ExpenseListProp = {
+  items: FormDataType[];
+};
+
+const ExpensesList = (props: ExpenseListProp) => {
   if (props.items.length === 0) {
     return <h2 className="no-expense">No expense found</h2>;
   }

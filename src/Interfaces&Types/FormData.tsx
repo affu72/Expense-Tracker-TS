@@ -3,4 +3,5 @@ export type FormDataType = {
   amount: number;
   date: Date;
   person: string;
+  id?: string;
 };

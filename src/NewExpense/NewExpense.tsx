@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FormDataType } from "../Interfaces&Types/FormData";
-import ExpenseForm from "./Expenseform";
+import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
 type NewExpenseProp = {
@@ -13,7 +13,7 @@ const NewExpense = ({ onGettingData }: NewExpenseProp) => {
   const inputHandler = function (formData: FormDataType) {
     const data = {
       ...formData,
-      id: Date.now(),
+      id: Date.now().toString(),
     };
     onGettingData(data);
   };

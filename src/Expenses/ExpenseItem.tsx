@@ -1,5 +1,5 @@
 import "./ExpenseItem.css";
-import ExpenseDate from "./ExpenseDate.js";
+import ExpenseDate from "./ExpenseDate";
 import Card from "../Card-component//Card";
 import { FormDataType } from "../Interfaces&Types/FormData";
 
@@ -15,7 +15,7 @@ function ExpenseItem(props: FormDataType) {
               {props.person
                 ?.split("")
                 .map((char, i) => (i === 0 ? char.toUpperCase() : char))
-                .join() || ""}
+                .join("")}
             </span>
           </h2>
           <div className="expense-item__price">&#8377; {props.amount}</div>

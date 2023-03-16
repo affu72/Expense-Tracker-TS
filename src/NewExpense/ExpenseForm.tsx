@@ -41,7 +41,7 @@ const ExpenseForm = ({ onFormSubmit, onCancel }: ExpenseFormProp) => {
     setEnteredDate("");
     setEnteredTitle("");
     setEnteredPerson("");
-    onCancel();
+    // onCancel();
   };
 
   return (
