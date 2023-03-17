@@ -1,6 +1,6 @@
 import "./Expenses.css";
 import Card from "../Card-component/Card";
-// import ExpenseFilter from "../expenseFilter/ExpenseFilter";
+import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
 import { SetStateAction, useState } from "react";
 import ExpensesList from "./ExpenseList";
 import ExpensesChart from "./ExpensesChart";
@@ -29,7 +29,7 @@ function Expenses(props: ExpensesProps) {
 
   return (
     <Card className="expenses">
-      {/* <ExpenseFilter onChangeFilter={filterChangehandler} year={props.year} /> */}
+      <ExpenseFilter onChangeFilter={filterChangehandler} year={props.year} />
       <ExpensesChart dataPoints={filteredExpense} />
       <ExpensesList items={filteredExpense} />
     </Card>
