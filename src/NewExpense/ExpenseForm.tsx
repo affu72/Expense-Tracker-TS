@@ -79,15 +79,6 @@ const ExpenseForm = ({ onFormSubmit, onCancel }: ExpenseFormProp) => {
               {ExpenseCategory.Other}
             </option>
           </select>
-
-          {/* <input
-            required
-            type="text"
-            onChange={titleChangeHandler}
-            value={enteredTitle}
-            placeholder="Expense Name"
-          />
-        </div> */}
         </div>
 
         <div className="new-expense__control">

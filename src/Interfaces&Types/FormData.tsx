@@ -6,9 +6,9 @@ export enum ExpenseCategory {
 }
 
 export enum FilterBy {
-  year = "year",
-  person = "person",
-  category = "category",
+  year = "Year",
+  person = "Person",
+  category = "Category",
 }
 
 export interface FormDataType<T> {

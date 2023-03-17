@@ -53,12 +53,17 @@ function App() {
   };
 
   const yearArray = expense.map((exp) => new Date(exp.date).getFullYear());
+  const personArray = expense.map((expense) => expense.person);
 
   return (
     <div className="app-header">
       <h1>Expense Tracker</h1>
       <NewExpense onGettingData={expenseDataHandler} />
-      <Expenses items={expense} year={new Set(yearArray)} />
+      <Expenses
+        items={expense}
+        year={[...new Set(yearArray)]}
+        person={[...new Set(personArray)]}
+      />
     </div>
   );
 }

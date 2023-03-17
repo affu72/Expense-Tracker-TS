@@ -1,7 +1,7 @@
 .expenses-filter {
   display: flex;
   justify-content: flex-end;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
   margin-bottom: 1.5rem;
 }
