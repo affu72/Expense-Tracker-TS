@@ -5,6 +5,7 @@ type ChartBarProps = {
   maxValue: number;
   label: string;
 };
+
 const ChartBar = (props: ChartBarProps) => {
   let barFilledHeight = "0%";
 

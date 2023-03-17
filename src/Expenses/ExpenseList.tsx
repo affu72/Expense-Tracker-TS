@@ -3,7 +3,7 @@ import "./ExpenseList.css";
 import { FormDataType } from "../Interfaces&Types/FormData";
 
 type ExpenseListProp = {
-  items: FormDataType[];
+  items: FormDataType<string>[];
 };
 
 const ExpensesList = (props: ExpenseListProp) => {
@@ -15,6 +15,7 @@ const ExpensesList = (props: ExpenseListProp) => {
     <ul className="expenses-list">
       {props.items.map((expense) => (
         <ExpenseItem
+          category={expense.category}
           title={expense.title}
           person={expense.person}
           date={expense.date}

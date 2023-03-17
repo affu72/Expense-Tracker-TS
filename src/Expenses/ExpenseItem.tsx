@@ -3,7 +3,7 @@ import ExpenseDate from "./ExpenseDate";
 import Card from "../Card-component//Card";
 import { FormDataType } from "../Interfaces&Types/FormData";
 
-function ExpenseItem(props: FormDataType) {
+function ExpenseItem(props: FormDataType<string>) {
   return (
     <li>
       <Card className={"expense-item"}>
@@ -18,6 +18,7 @@ function ExpenseItem(props: FormDataType) {
                 .join("")}
             </span>
           </h2>
+          <div className="category">{props.category}</div>
           <div className="expense-item__price">&#8377; {props.amount}</div>
         </div>
       </Card>

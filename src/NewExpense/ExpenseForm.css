@@ -17,7 +17,8 @@
   display: block;
 }
 
-.new-expense__control input {
+.new-expense__control input,
+.new-expense__control select {
   font: inherit;
   padding: 0.8rem;
   border-radius: 6px;
@@ -26,7 +27,10 @@
   max-width: 100%;
 }
 
-.new-expense__actions,
-.buttons {
-  /* margin-left: 10rem; */
+.submit-btn {
+  transition: 0.3s all;
+}
+
+.submit-btn:active {
+  transform: scale(0.8);
 }

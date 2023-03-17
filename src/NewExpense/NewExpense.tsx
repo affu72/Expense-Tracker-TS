@@ -4,13 +4,13 @@ import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
 type NewExpenseProp = {
-  onGettingData: (formData: FormDataType) => void;
+  onGettingData: (formData: FormDataType<string>) => void;
 };
 
 const NewExpense = ({ onGettingData }: NewExpenseProp) => {
   const [addNewExpense, setNewExpense] = useState(false);
 
-  const inputHandler = function (formData: FormDataType) {
+  const inputHandler = function (formData: FormDataType<string>) {
     const data = {
       ...formData,
       id: Date.now().toString(),

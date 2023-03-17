@@ -7,7 +7,7 @@ import ExpensesChart from "./ExpensesChart";
 import { FormDataType } from "../Interfaces&Types/FormData";
 
 type ExpensesProps = {
-  items: FormDataType[];
+  items: FormDataType<string>[];
   year: Set<number>;
 };
 

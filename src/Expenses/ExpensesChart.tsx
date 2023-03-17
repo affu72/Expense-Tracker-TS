@@ -2,7 +2,7 @@ import Chart from "../Chart/Chart";
 import { FormDataType } from "../Interfaces&Types/FormData";
 
 type ExpenseChartProp = {
-  dataPoints: FormDataType[];
+  dataPoints: FormDataType<string>[];
 };
 
 const ExpensesChart = ({ dataPoints }: ExpenseChartProp) => {

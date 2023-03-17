@@ -1,9 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import "./ExpenseForm.css";
-import { FormDataType } from "../Interfaces&Types/FormData";
+import { FormDataType, ExpenseCategory } from "../Interfaces&Types/FormData";
 
 type ExpenseFormProp = {
-  onFormSubmit: (data: FormDataType) => void;
+  onFormSubmit: (data: FormDataType<string>) => void;
   onCancel: () => void;
 };
 
@@ -12,6 +12,7 @@ const ExpenseForm = ({ onFormSubmit, onCancel }: ExpenseFormProp) => {
   const [enteredPerson, setEnteredPerson] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  const [category, setcategory] = useState("");
 
   const titleChangeHandler = function (event: ChangeEvent<HTMLInputElement>) {
     setEnteredTitle(event.target.value);
@@ -27,10 +28,15 @@ const ExpenseForm = ({ onFormSubmit, onCancel }: ExpenseFormProp) => {
     setEnteredPerson(event.target.value.replace(/[0-9,!$%^&*%]/, ""));
   };
 
+  const categoryHandler = (event: ChangeEvent<HTMLSelectElement>) => {
+    setcategory(event.target.value);
+  };
+
   const formHandler = function (event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     onFormSubmit({
+      category: category,
       title: enteredTitle,
       amount: +enteredAmount,
       date: new Date(enteredDate),
@@ -57,6 +63,33 @@ const ExpenseForm = ({ onFormSubmit, onCancel }: ExpenseFormProp) => {
             placeholder="Expense Name"
           />
         </div>
+
+        <div className="new-expense__control">
+          <label>Category</label>
+
+          <select name="" id="" onChange={categoryHandler}>
+            <option value={ExpenseCategory.Rent}>{ExpenseCategory.Rent}</option>
+            <option value={ExpenseCategory.Groceries}>
+              {ExpenseCategory.Groceries}
+            </option>
+            <option value={ExpenseCategory.Transportation}>
+              {ExpenseCategory.Transportation}
+            </option>
+            <option value={ExpenseCategory.Other}>
+              {ExpenseCategory.Other}
+            </option>
+          </select>
+
+          {/* <input
+            required
+            type="text"
+            onChange={titleChangeHandler}
+            value={enteredTitle}
+            placeholder="Expense Name"
+          />
+        </div> */}
+        </div>
+
         <div className="new-expense__control">
           <label>Person</label>
           <input
@@ -94,7 +127,9 @@ const ExpenseForm = ({ onFormSubmit, onCancel }: ExpenseFormProp) => {
         <button onClick={onCancel} type="button">
           Cancel
         </button>
-        <button type="submit">Add Expense</button>
+        <button className="submit-btn" type="submit">
+          Add Expense
+        </button>
       </div>
     </form>
   );
