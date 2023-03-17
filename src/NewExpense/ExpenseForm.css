@@ -1,20 +1,25 @@
 .new-expense__controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  margin-bottom: 1.5rem;
   text-align: left;
+  justify-items: center;
+  align-items: center;
 }
 
 .new-expense__control label {
   font-weight: bold;
+  font-size: 1.8rem;
   margin-bottom: 0.5rem;
   display: block;
 }
 
 .new-expense__control input {
   font: inherit;
-  padding: 0.5rem;
+  padding: 0.8rem;
   border-radius: 6px;
   border: 1px solid #ccc;
   width: 20rem;
@@ -23,5 +28,5 @@
 
 .new-expense__actions,
 .buttons {
-  text-align: right;
+  /* margin-left: 10rem; */
 }
