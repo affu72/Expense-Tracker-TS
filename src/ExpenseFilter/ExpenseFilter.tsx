@@ -12,6 +12,8 @@ type ExpeneFilterProp = {
     selectedPerson: string;
     selectedCatogory: string;
   };
+
+  clearFilter: () => void;
   year: number[];
   persons: string[];
 };
@@ -70,6 +72,13 @@ const ExpenseFilter = (props: ExpeneFilterProp) => {
           </option>
         ))}
       </select>
+      <button
+        type="reset"
+        className="clear-btn"
+        onClick={() => props.clearFilter()}
+      >
+        Clear filter
+      </button>
     </div>
   );
 };

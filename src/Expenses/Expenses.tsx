@@ -18,6 +18,7 @@ function Expenses(props: ExpensesProps) {
   const [selectedYear, setSelectedYear] = useState<string>("");
   const [selectedPerson, setSelectedPerson] = useState<string>("");
   const [selectedCatogory, setSelectedCategory] = useState<string>("");
+  const [clearFilter, setClearFilter] = useState<boolean>(false);
 
   const [filteredExpense, setFilteredExpense] = useState(expenses);
 
@@ -56,6 +57,12 @@ function Expenses(props: ExpensesProps) {
     setSelectedCategory(selectedValue);
   };
 
+  const clearFilterHandler = () => {
+    setSelectedCategory("");
+    setSelectedPerson("");
+    setSelectedYear("");
+  };
+
   return (
     <Card className="expenses">
       <ExpenseFilter
@@ -65,6 +72,7 @@ function Expenses(props: ExpensesProps) {
         year={props.year}
         persons={props.person}
         value={{ selectedYear, selectedCatogory, selectedPerson }}
+        clearFilter={clearFilterHandler}
       />
       <ExpensesChart dataPoints={filteredExpense} />
       <ExpensesList items={filteredExpense} />

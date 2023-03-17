@@ -67,7 +67,7 @@ const ExpenseForm = ({ onFormSubmit, onCancel }: ExpenseFormProp) => {
         <div className="new-expense__control">
           <label>Category</label>
 
-          <select name="" id="" onChange={categoryHandler}>
+          <select onChange={categoryHandler} value={category}>
             <option value={ExpenseCategory.Rent}>{ExpenseCategory.Rent}</option>
             <option value={ExpenseCategory.Groceries}>
               {ExpenseCategory.Groceries}
