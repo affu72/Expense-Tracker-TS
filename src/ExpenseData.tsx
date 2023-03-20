@@ -1,0 +1,86 @@
+import { ExpenseCategory, FormDataType } from "./Interfaces&Types/FormData";
+
+const expensesData: FormDataType<string>[] = [
+  {
+    title: "Rent Payment",
+    amount: 10000,
+    date: new Date("2022-03-28T00:03:10.331Z"),
+    person: "John",
+    id: "x19x66e3nb8q3cu",
+    category: ExpenseCategory.Rent,
+  },
+  {
+    title: "Grocery Shopping",
+    amount: 2500,
+    date: new Date("2022-03-27T11:45:10.331Z"),
+    person: "Sarah",
+    id: "x11x77a2bb9z2dv",
+    category: ExpenseCategory.Groceries,
+  },
+  {
+    title: "Uber Ride",
+    amount: 600,
+    date: new Date("2022-03-26T16:20:10.331Z"),
+    person: "Mark",
+    id: "x23x12c5cc1x5fe",
+    category: ExpenseCategory.Transportation,
+  },
+  {
+    title: "Netflix Subscription",
+    amount: 799,
+    date: new Date("2022-03-25T20:15:10.331Z"),
+    person: "Lisa",
+    id: "x51x44f9dd6h7lt",
+    category: ExpenseCategory.Other,
+  },
+  {
+    title: "Electricity Bill",
+    amount: 5000,
+    date: new Date("2022-03-24T08:30:10.331Z"),
+    person: "John",
+    id: "x71x81h3rj2q8bl",
+    category: ExpenseCategory.Rent,
+  },
+  {
+    title: "Metro Fare",
+    amount: 200,
+    date: new Date("2022-03-23T14:25:10.331Z"),
+    person: "Sarah",
+    id: "x10x09d4kk8l1vn",
+    category: ExpenseCategory.Transportation,
+  },
+  {
+    title: "Dinner Party",
+    amount: 3500,
+    date: new Date("2022-03-22T19:40:10.331Z"),
+    person: "Mark",
+    id: "x64x88w2nn5y9xv",
+    category: ExpenseCategory.Other,
+  },
+  {
+    title: "Weekly Groceries",
+    amount: 5000,
+    date: new Date("2022-03-21T13:10:10.331Z"),
+    person: "Lisa",
+    id: "x93x62t6kk4p7se",
+    category: ExpenseCategory.Groceries,
+  },
+  {
+    title: "Gas Bill",
+    amount: 3500,
+    date: new Date("2022-03-20T10:50:10.331Z"),
+    person: "John",
+    id: "x11x48d9vv3t2wj",
+    category: ExpenseCategory.Rent,
+  },
+  {
+    title: "Cab Fare",
+    amount: 750,
+    date: new Date("2022-03-19T15:15:10.331Z"),
+    person: "Sarah",
+    id: "x77x31a8nn2c0ff",
+    category: ExpenseCategory.Transportation,
+  },
+];
+
+export default expensesData;

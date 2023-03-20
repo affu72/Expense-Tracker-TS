@@ -47,6 +47,7 @@ const ExpenseForm = ({ onFormSubmit, onCancel }: ExpenseFormProp) => {
     setEnteredDate("");
     setEnteredTitle("");
     setEnteredPerson("");
+    setcategory("");
     // onCancel();
   };
 
@@ -67,7 +68,8 @@ const ExpenseForm = ({ onFormSubmit, onCancel }: ExpenseFormProp) => {
         <div className="new-expense__control">
           <label>Category</label>
 
-          <select name="" id="" onChange={categoryHandler}>
+          <select required onChange={categoryHandler} value={category}>
+            <option value="">Select category</option>
             <option value={ExpenseCategory.Rent}>{ExpenseCategory.Rent}</option>
             <option value={ExpenseCategory.Groceries}>
               {ExpenseCategory.Groceries}
@@ -79,15 +81,6 @@ const ExpenseForm = ({ onFormSubmit, onCancel }: ExpenseFormProp) => {
               {ExpenseCategory.Other}
             </option>
           </select>
-
-          {/* <input
-            required
-            type="text"
-            onChange={titleChangeHandler}
-            value={enteredTitle}
-            placeholder="Expense Name"
-          />
-        </div> */}
         </div>
 
         <div className="new-expense__control">
